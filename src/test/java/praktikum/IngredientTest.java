@@ -8,6 +8,8 @@ import static org.junit.Assert.*;
 @RunWith(Parameterized.class)
 public class IngredientTest {
 
+    private static final float PRICE_DELTA = 0.01f;
+
     private final IngredientType type;
     private final String name;
     private final float price;
@@ -33,6 +35,6 @@ public class IngredientTest {
         Ingredient ingredient = new Ingredient(type, name, price);
         assertEquals(type, ingredient.getType());
         assertEquals(name, ingredient.getName());
-        assertEquals(price, ingredient.getPrice(), 0.01f);
+        assertEquals(price, ingredient.getPrice(), PRICE_DELTA);
     }
 }
